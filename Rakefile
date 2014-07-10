@@ -17,13 +17,14 @@ Jeweler::Tasks.new do |gem|
   gem.name = "pure_dash"
   gem.homepage = "http://github.com/jameshuynh/pure_dash"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Pure Admin Dashboard}
+  gem.description = %Q{Pure Admin Dashboard}
   gem.email = "james@rubify.com"
   gem.authors = ["James"]
+  gem.version = File.exist?('VERSION') ? File.read('VERSION') : ""
   # dependencies defined in Gemfile
 end
-Jeweler::RubygemsDotOrgTasks.new
+# Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
