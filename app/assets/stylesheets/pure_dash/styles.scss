@@ -1,0 +1,106 @@
+@import 'pure';
+
+.pure-dash-banner {
+  background: #193d61;
+}
+
+.home-menu {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.home-menu.pure-menu-open {
+  height: 53px;
+  background: none;
+  div.company-slogan {
+    color: #fff;
+    float: left;
+    color: #97a7b7;
+    font-size: 12px;
+    padding-top: 5px;
+    margin-left: 6px;
+    text-transform: lowercase;
+  }
+  
+  div.company-logo {
+    float: left;
+  }
+  
+  a.pure-menu-heading {
+    padding-top: 16px;
+    padding-left: 0;
+  }
+  
+  ul.rhs-buttons {
+    padding: 14px;
+    padding-right: 0;
+  }
+  
+  a.rhs-button {
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.pure-button-primary, a.pure-button-primary {
+  background: #f4b335;
+  color: #fff;
+  border-radius: 0;
+}
+
+.home-menu ul {
+  float: right;
+}
+
+.pure-menu.pure-menu-horizontal ul.pure-dash-main-menu {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: block;
+  li {
+    a {
+      padding: 17px 0;
+      &:hover {
+        background: none;
+        color: #d6d6d6;
+      };
+    }
+    margin-right: 50px;
+  }
+}
+
+.pure-menu.pure-dash-main-menu-container {
+  background: #333231;
+}
+
+@media only screen and (max-width : 1024px) {
+  .home-menu.pure-menu-open {
+    color: #000;
+    a.pure-menu-heading {
+      padding-left: 10px;
+    }
+    ul.rhs-buttons {
+      padding-right: 10px;
+    }
+  }
+  
+  .pure-menu.pure-menu-horizontal ul.pure-dash-main-menu {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width : 767px) {
+  .pure-menu.pure-menu-horizontal ul.pure-dash-main-menu {
+    li {
+      display: block;
+      a {
+        padding: 10px 0;
+      }
+      margin-right: 0px;
+    }    
+  }
+}
