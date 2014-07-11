@@ -16,5 +16,9 @@ RSpec.configure do |config|
       options = *args.extract_options!
       "<img src=\"#{args[0]}\" />"
     end
+    
+    def asset_path(path)
+      return path
+    end
   end
 end

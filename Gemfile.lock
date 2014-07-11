@@ -159,6 +159,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack (>= 4.1.0)
+  activesupport (>= 4.1.0)
   bundler (~> 1.0)
   devise
   guard
