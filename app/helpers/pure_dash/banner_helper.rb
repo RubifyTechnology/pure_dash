@@ -10,7 +10,7 @@ module PureDash
         }]        
       }.merge(opts)
       slogan_content = content_tag(:div, opts[:slogan], class: "company-slogan")
-      company_logo_content = content_tag(:a, content_tag(:div, image_tag(opts[:company_logo]).html_safe, class: "company-logo") + slogan_content.html_safe, class: "pure-menu-heading", href: "/")
+      company_logo_content = content_tag(:a, content_tag(:div, image_tag(asset_path(opts[:company_logo])).html_safe, class: "company-logo") + slogan_content.html_safe, class: "pure-menu-heading", href: "/")
       
       button_tags = []
       opts[:rhs_buttons].each do |button|
