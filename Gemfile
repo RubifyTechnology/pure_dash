@@ -19,3 +19,4 @@ group :development do
 end
 
 gem 'actionpack', '>= 4.1.0'
+gem 'devise'
