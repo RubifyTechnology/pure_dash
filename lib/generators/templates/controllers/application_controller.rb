@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-  before_filter :authenticate_user!
-  
-  def check_super_admin
-    if current_user.is_super_admin? == false
-      return redirect_to '/401'
-    end
+  before_filter :authenticate_user!    
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :email) }
+    devise_parameter_sanitizer.for(:forget_password) { |u| u.permit(:login) }
   end
-    
 end

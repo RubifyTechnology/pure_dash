@@ -4,6 +4,7 @@ require File.join(File.dirname(__FILE__), '../../app/helpers/pure_dash', 'banner
 require 'action_view'
 
 include ActionView::Helpers::TagHelper
+include ActionView::Helpers::UrlHelper
 include PureDash::BannerHelper
 describe 'BannerHelper' do
   mock_everything
@@ -18,6 +19,6 @@ describe 'BannerHelper' do
       }]
     })
     
-    expect(banner_content).to eq("<div class=\"pure-dash-banner\"><div class=\"home-menu pure-menu pure-menu-open pure-menu-horizontal\"><a class=\"pure-menu-heading\" href=\"/\"><div class=\"company-logo\"><img src=\"/assets/sample_logo.png\" /></div><div class=\"company-slogan\">helping company grows</div></a><ul class=\"rhs-buttons\"><li><a class=\"rhs-button pure-button pure-button-primary\" href=\"/users/sign_out\">Logout</a></li></ul></div></div>")
+    expect(banner_content).to eq("<div class=\"pure-dash-banner\"><div class=\"home-menu pure-menu pure-menu-open pure-menu-horizontal\"><a class=\"pure-menu-heading\" href=\"/\"><div class=\"company-logo\"><img src=\"/assets/sample_logo.png\" /></div><div class=\"company-slogan\">helping company grows</div></a><ul class=\"rhs-buttons\"><li><a href=\"/users/sign_out\" class=\"rhs-button pure-button pure-button-primary\">Logout</a></li></ul></div></div>")
   end
 end

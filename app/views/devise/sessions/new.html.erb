@@ -1,0 +1,29 @@
+<div id='user_new_container'>
+	<% if APP_CONFIG[:login_logo_url].blank? == false %>
+	  <div style='text-align:center;'>
+	    <img src='<%= APP_CONFIG[:login_logo_url] %>' />
+	  </div>
+	<% end %>
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:id => "user_new"}) do |f| %>
+    <h2><%= APP_CONFIG[:project_name] %></h2>
+    
+    <% if flash[:alert] %>
+      <div id='error_explanation' style='border-bottom: 0; margin-bottom: 0; padding-bottom: 0;'>
+        <h2 style='text-align: center;'><%= flash[:alert] %></h2>
+      </div>
+    <% end %>
+    
+    <div><%= f.email_field :login, :autocomplete => "off", :type => "text", placeholder: "Login", style: "-webkit-appearance: none;" %></div>
+    <div><%= f.password_field :password, placeholder: "Password", style: "-webkit-appearance: none;" %></div>
+  
+    <div class='sign-in-portion clearfix'>
+      <% if devise_mapping.rememberable? -%>
+        <div class='remember-me'><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+      <% end -%>
+      <div class='sign-in-button'><%=raw f.submit "Sign in" %></div>
+    </div>
+  <% end %>
+
+  <%= render :partial => "devise/shared/links" %>
+</div>

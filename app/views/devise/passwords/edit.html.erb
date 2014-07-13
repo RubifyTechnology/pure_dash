@@ -1,0 +1,23 @@
+<div id='user_new_container'>
+	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :id => "user_new" }) do |f| %>
+	  <h2>Change your password</h2>
+	  <%= devise_error_messages! %>
+	  <%= f.hidden_field :reset_password_token %>  
+	  <div>
+	    <%= f.password_field :password, placeholder: "New Password" %>
+	  </div>
+	  <div>
+	    <%= f.password_field :password_confirmation, placeholder: "Confirm new Password" %>
+	  </div>
+    
+
+	  <div class='sign-in-portion clearfix' style='margin-top: 5px;'>
+	    <div class='sign-in-button' style='float: none; margin: 0 auto; width: 239px;'>
+	      <%= f.submit "Change my password" %>
+	    </div>
+	  </div>
+  
+	<% end %>
+
+	<%= render :partial => "devise/shared/links" %>
+</div>

@@ -1,0 +1,17 @@
+<div id='user_new_container'>
+	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :id => "user_new" }) do |f| %>
+	  <h2>Forgot your password?</h2>
+	  <%= devise_error_messages! %>
+
+	  <div><%= f.email_field :login, :type => "text", placeholder: "Login" %></div>
+
+	  <div class='sign-in-portion clearfix' style='margin-top: 5px;'>
+	    <div class='sign-in-button' style='float: none; margin: 0 auto;'>
+	      <%= f.submit "Send me reset password instructions", :style => "width: 247px;" %>
+	    </div>
+	  </div>
+  
+	<% end %>
+
+	<%= render :partial => "devise/shared/links" %>
+</div>

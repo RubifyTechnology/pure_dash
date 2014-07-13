@@ -3,6 +3,5 @@ class PureDashController < PureDash::ApplicationController
   end
   
   def home
-    render :layout => false
   end
 end

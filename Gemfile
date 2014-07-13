@@ -20,4 +20,6 @@ end
 
 gem 'activesupport', '>= 4.1.0'
 gem 'actionpack', '>= 4.1.0'
-gem 'devise'
+gem 'devise', '~> 3.2.4'
+gem 'formnestic', '~> 1.0.2'
+gem 'smart_listing', '~> 1.0.0'

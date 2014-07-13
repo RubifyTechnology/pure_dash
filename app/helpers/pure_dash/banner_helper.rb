@@ -7,6 +7,7 @@ module PureDash
         rhs_buttons: [{
           label: "Logout",
           url: "/users/sign_out",
+          method: "delete"
         }]        
       }.merge(opts)
       slogan_content = content_tag(:div, opts[:slogan], class: "company-slogan")
@@ -14,7 +15,7 @@ module PureDash
       
       button_tags = []
       opts[:rhs_buttons].each do |button|
-        button_tags << content_tag(:li, content_tag(:a, button[:label], href: button[:url], class: ["rhs-button", button[:class]].compact.join(" ")))
+        button_tags << content_tag(:li, link_to(button[:label], button[:url], class: ["rhs-button", button[:class]].compact.join(" "), method: button[:method]))
       end
       
       rhs_buttons_content = content_tag(:ul, button_tags.join.html_safe, class: "rhs-buttons")
