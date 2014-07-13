@@ -98,7 +98,7 @@ $max_width: 1024px;
         color: #d6d6d6;
         text-decoration: none;
       }
-    }
+    }    
   }
   li.active {
     background-color: #bab1a8;
@@ -109,8 +109,48 @@ $max_width: 1024px;
   }
 }
 
+ul.pure-dash-sub-menu {
+  width: 100%;
+  @include clearfix;
+  display: block;
+  left: 0;
+  top: 0;
+  position: relative;
+  visibility: visible;
+  li {
+    float: left;
+  }
+}
+
 .pure-menu.pure-dash-main-menu-container {
   background: #333231;
+}
+
+.pure-menu.pure-dash-sub-menu-container {
+  background: #bab1a8;
+  height: 38px;
+  ul {
+    max-width: $max_width;
+    margin: 0 auto;
+    display: block;
+    li {
+      a {
+        height: 38px;
+        padding-top: 6px;
+        display: block;
+        &:hover {
+          text-decoration: none;
+          background: none;
+          color: #000;
+        }
+      }
+    }
+    li.active {
+      a {
+        color: #000;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width : 1024px) {
@@ -136,12 +176,14 @@ $max_width: 1024px;
 
 @media only screen and (max-width : 767px) {
   .pure-menu.pure-menu-horizontal ul.pure-dash-main-menu {
+    margin-right: 15px;
     li {
       display: block;
+      padding-left: 10px;
       a {
         padding: 10px 0;
       }
-      margin-right: 0px;
+      margin-right: 0px;      
     }    
   }
 }
@@ -185,6 +227,9 @@ p.pure-dash-no-record {
   }
   > input, > select {
     width: 79%;
+  }
+  &.date_select > select {
+    width: auto;
   }
 }
 
@@ -273,7 +318,7 @@ a.pure-dash-cancel-link {
 }
 
 a.pure-button {
-  &:hover {
+  &:hover, &:focus {
     color: #fff;
     text-decoration: none;
   }
@@ -297,6 +342,10 @@ a.pure-button {
   
   .pure-form fieldset.inputs div.pure-dash-without-label-field {
     margin-left: 0;
+  }
+  
+  .company-slogan {
+    display: none;
   }
    /* Styles */
 }
@@ -337,8 +386,22 @@ ul.pagination {
       }
     }
   }
+  li.active {
+    a {
+      background-color: #333231;
+      color: #fff;
+    }
+  }
   li:last-child {
     margin-right: 0;
   }
   
+}
+
+div.pure-dash-flash-notice {
+  background: #f4b335;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  text-align: center;
 }
