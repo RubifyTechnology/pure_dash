@@ -1,6 +1,9 @@
 //= require './pure'
 //= require './glyphicons'
 //= require './responsive-tables'
+//= require '../pickadate/default'
+//= require '../pickadate/default.date'
+//= require './on_off_switch'
 
 $max_width: 1024px;
 
@@ -128,7 +131,6 @@ ul.pure-dash-sub-menu {
 
 .pure-menu.pure-dash-sub-menu-container {
   background: #bab1a8;
-  height: 38px;
   ul {
     max-width: $max_width;
     margin: 0 auto;
@@ -311,6 +313,10 @@ table.pure-dash-data-table {
 div.form-group.filter {
   float: right;  
   margin-bottom: 10px;
+  input {
+    border-radius: 2em;
+    padding: 0.5em 1em;
+  }
 }
 
 a.pure-dash-cancel-link {
