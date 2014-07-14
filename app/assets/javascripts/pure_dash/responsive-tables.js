@@ -3,7 +3,6 @@ $(document).ready(function() {
   window.updateTables = function() {
     if (($(window).width() < 767) && !switched ){
       switched = true;
-      console.log($("table.responsive").length);
       $("table.responsive").each(function(i, element) {
         splitTable($(element));
       });

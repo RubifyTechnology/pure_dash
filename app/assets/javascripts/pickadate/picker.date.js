@@ -30,7 +30,6 @@ var DAYS_IN_WEEK = 7,
  */
 function DatePicker( picker, settings ) {
 
-  console.log(picker.$node[0]);
     var calendar = this,
         elementValue = picker.$node[ 0 ].value,
         elementDataValue = picker.$node.data( 'value' ),
