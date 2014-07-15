@@ -554,3 +554,15 @@ div.process_bar {
 .picker__select--month, .picker__select--year {
   height: 2.5em;
 }
+
+.pure-form-aligned .pure-control-group.left-label label {
+  text-align: left;
+}
+
+.picker__table td {
+  text-align: center;
+}
+
+.picker__weekday {
+  text-align: center;
+}
