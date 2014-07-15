@@ -475,3 +475,55 @@ div.pure-dash-flash-errors {
     list-style:none;
   }
 }
+
+div.process_bar {
+  width: 200px;
+  height: 7px;
+  position:relative;
+  border:1px solid #ccc;
+  &:after {
+    width: 0px;
+    height: 100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background: #ccc;
+    content: "";
+  }
+  
+  &[value='0'] {
+    border:1px solid #6a6a6a;
+  }
+  
+  &[value='25'] {
+    border:1px solid #a2acb7;
+    &:after {
+      width:25%;
+      background: #a2acb7;
+    }
+  }
+  
+  &[value='50'] {
+    border:1px solid #ae3a45;
+    &:after {
+      width:50%;
+      background: #ae3a45;
+    }
+  }
+  
+  &[value='75'] {
+    border:1px solid #f4b335;
+    &:after {
+      width:75%;
+      background: #f4b335;
+    }
+  }
+  
+  &[value='100'] {
+    border:1px solid #10406e;
+    &:after {
+      width:100%;
+      background: #10406e;
+    }
+  }
+}
