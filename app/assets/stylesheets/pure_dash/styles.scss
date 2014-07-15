@@ -464,3 +464,14 @@ div.pure-dash-flash-notice {
   margin-bottom: 10px;
   text-align: center;
 }
+
+div.pure-dash-flash-errors {
+  background: #ae3a45;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  text-align: center;
+  ul {
+    list-style:none;
+  }
+}
