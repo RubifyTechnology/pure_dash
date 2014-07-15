@@ -13,6 +13,7 @@ module PureDash
       def find_for_database_authentication(warden_conditions)
         conditions = warden_conditions.dup
         login = conditions.delete(:login)
+        return nil if login.blank?
         if new.respond_to?(:username) and new.respond_to?(:active)
           where(conditions).where(["(lower(username) = :value OR lower(email) = :value) and active = :active", { :value => login.strip.downcase, :active => true }]).first
         elsif new.respond_to?(:username)
