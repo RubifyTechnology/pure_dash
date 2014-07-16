@@ -35,8 +35,6 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/pickadate/picker.date.js",
     "app/assets/javascripts/pickadate/picker.js",
     "app/assets/javascripts/pure_dash/app.js",
-    "app/assets/javascripts/pure_dash/float_label.js",
-    "app/assets/javascripts/pure_dash/form_action.js",
     "app/assets/javascripts/pure_dash/responsive-tables.js",
     "app/assets/stylesheets/pickadate/default.css",
     "app/assets/stylesheets/pickadate/default.date.css",

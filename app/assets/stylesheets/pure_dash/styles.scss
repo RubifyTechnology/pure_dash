@@ -1,6 +1,9 @@
 //= require './pure'
 //= require './glyphicons'
 //= require './responsive-tables'
+//= require '../fancybox/jquery.fancybox-buttons'
+//= require '../fancybox/jquery.fancybox-thumbs'
+//= require '../fancybox/jquery.fancybox'
 //= require '../pickadate/default'
 //= require '../pickadate/default.date'
 //= require './on_off_switch'
@@ -229,6 +232,10 @@ a.create-new-button {
 
 .float-right {
   float: right;
+}
+
+.margin-top-5px {
+  margin-top: 5px;
 }
 
 p.pure-dash-no-record {
