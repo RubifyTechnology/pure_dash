@@ -4,6 +4,7 @@
 //= require '../pickadate/default'
 //= require '../pickadate/default.date'
 //= require './on_off_switch'
+//= require './nprogress'
 
 $max_width: 1024px;
 
@@ -101,6 +102,12 @@ $max_width: 1024px;
         color: #d6d6d6;
         text-decoration: none;
       }
+      &:focus {
+        background: none;
+        text-decoration: none;
+        color: #d6d6d6;
+        outline: none;
+      }
     } 
     &:first-child {
       a {
@@ -131,7 +138,7 @@ ul.pure-dash-sub-menu {
   position: relative;
   visibility: visible;
   li {
-    float: left;
+    float: left;    
   }
 }
 
@@ -155,6 +162,12 @@ ul.pure-dash-sub-menu {
           background: none;
           color: #000;
         }
+        &:focus {
+          background: none;
+          text-decoration: none;
+          color: #000;
+          outline: none;
+        }
       }
       &:first-child {
         a {
@@ -170,7 +183,17 @@ ul.pure-dash-sub-menu {
   }
 }
 
-@media only screen and (max-width : 1024px) {
+@media only screen and (min-width : $max_width + 1) and (max-width : $max_width + 82) {
+  #nprogress .spinner {
+    right: 11.5%;
+  }
+}
+
+@media only screen and (max-width : $max_width) {
+  #nprogress .spinner {
+    right: 90px;
+  }
+  
   .home-menu.pure-menu-open {
     color: #000;
     a.pure-menu-heading {
@@ -480,7 +503,7 @@ div.process_bar {
   width: 200px;
   height: 7px;
   position:relative;
-  border:1px solid #f3f3f3;
+  border:1px solid #f3f3f3;;
   &:after {
     width: 0px;
     height: 100%;
@@ -528,22 +551,6 @@ div.process_bar {
   }
 }
 
-.picker__select--month, .picker__select--year {
-  height: 2.5em;
-}
-
-.pure-form-aligned .pure-control-group.left-label label {
-  text-align: left;
-}
-
-.picker__table td {
-  text-align: center;
-}
-
-.picker__weekday {
-  text-align: center;
-}
-
 .upload_file_area {
   margin-bottom: 10px;
   position: relative;
@@ -557,7 +564,7 @@ div.process_bar {
     content:"";
     z-index:-1;
   }
-  
+
   .pure-button.button-yellow.button-upload {
     position:relative;
     width: 120px;
