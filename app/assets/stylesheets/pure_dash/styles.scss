@@ -391,12 +391,61 @@ table.pure-dash-data-table {
   }
 }
 
+div.pure-dash-filter-container {
+  @include clearfix;
+  position: relative;
+  min-height: 50px;
+}
+
 div.form-group.filter {
-  float: right;  
+  margin-top: 10px;
   margin-bottom: 10px;
+  float: right;  
+  bottom: 0px;
   input {
     border-radius: 2em;
     padding: 0.5em 1em;
+    bottom: 5px;
+    right: 0;
+  }
+}
+
+div.form-group.filter-controls {
+  float: left;
+  width: 320px;
+  ul {
+    @include clearfix;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      @include clearfix;
+      padding-top: 10px;
+    }
+    label {
+      width: 30%;
+      margin-left: 1%;
+      float: left;
+      text-align: left;
+      display: block;
+    }
+    div.onoffswitch {
+      display: block;
+      width: auto;
+      float: left;
+    }
+    label.onoffswitch-label {
+      width: 90px;
+      float: none;
+      margin: 0;
+    }
+    input {
+      float: left;
+      margin-top: 8px;
+    }
+    select {
+      width: 69%;
+    }
   }
 }
 
@@ -408,6 +457,20 @@ a.pure-button {
   &:hover, &:focus {
     color: #fff;
     text-decoration: none;
+  }
+}
+@media only screen and (max-width : 740px) {
+  div.form-group.filter-controls {
+    float: none;
+  }
+  div.pure-dash-filter-container {
+    div.form-group.filter {
+      float: none;
+      margin-bottom: 0;
+      input {
+        width: 100%;
+      }
+    }
   }
 }
 
