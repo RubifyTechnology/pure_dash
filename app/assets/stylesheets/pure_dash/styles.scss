@@ -339,11 +339,13 @@ p.pure-dash-no-record {
 }
 
 div.pure-dash-page-header {
-  background: #6a6a6a;
+  background: #fff;
   margin-bottom: 10px;
   text-align: center;
   padding: 10px 0;
-  color: #fff;
+  color: #333;
+  font-size: 1.5em;
+  border-bottom: 1px solid #ddd;
 }
 
 table.pure-dash-data-table {
@@ -595,7 +597,6 @@ div.process_bar {
   }
 }
 
-
 .first_upload {
   width:256px;
   height:256px;
@@ -684,4 +685,13 @@ div.process_bar {
       };
     }
   }
+}
+
+.picker__select--month,
+.picker__select--year {
+  height: 2.5em;
+}
+
+.picker__table td, .picker__table th {
+  text-align: center;
 }
