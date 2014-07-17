@@ -1,0 +1,59 @@
+pie:
+  - 
+    color: "#f8474b"
+    highlight: "#ff474b"
+  - 
+    color: "#feb45c"
+    highlight: "#ffb45c"
+  - 
+    color: "#47c0be"
+    highlight: "#55c0be"
+  - 
+    color: "#98bcce"
+    highlight: "#aabcce"
+  - 
+    color: "#dddddd"
+    highlight: "#eedddd"
+  - 
+    color: "#b93add"
+    highlight: "#cc3add"
+  - 
+    color: "#0cb161"
+    highlight: "#11b161"
+  - 
+    color: "#1576e3"
+    highlight: "#2276e3"
+  - 
+    color: "#d21580"
+    highlight: "#ee1580"
+  - 
+    color: "#725635"
+    highlight: "#885635"
+    
+line:
+  -
+    fillColor: "rgba(220,220,220,0.2)"
+    strokeColor: "rgba(220,220,220,1)"
+    pointColor: "rgba(220,220,220,1)"
+    pointStrokeColor: "#fff"
+    pointHighlightFill: "#fff"
+    pointHighlightStroke: "rgba(220,220,220,1)"
+  -
+    fillColor: "rgba(151,187,205,0.2)"
+    strokeColor: "rgba(151,187,205,1)"
+    pointColor: "rgba(151,187,205,1)"
+    pointStrokeColor: "#fff"
+    pointHighlightFill: "#fff"
+    pointHighlightStroke: "rgba(151,187,205,1)"
+    
+bar:
+  -
+    fillColor: "rgba(220,220,220,1)"
+    strokeColor: "rgba(220,220,220,0.9)"
+    highlightFill: "rgba(220,220,220,0.75)"
+    highlightStroke: "rgba(220,220,220,1)"
+  -
+    fillColor: "rgba(151,187,205,1)"
+    strokeColor: "rgba(151,187,205,0.9)"
+    highlightFill: "rgba(151,187,205,0.75)"
+    highlightStroke: "rgba(151,187,205,1)"

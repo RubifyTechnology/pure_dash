@@ -11,7 +11,7 @@ module PureDash
       class_option :orm
 
       def copy_initializer
-        # template "config/config.yml", "config/config.yml"
+        template "config/chart_color.yml", "config/chart_color.yml"
       end
       
       def copy_locales
