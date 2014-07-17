@@ -1477,10 +1477,11 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 }
 
 
-.pure-menu li a:hover,
+/*.pure-menu li a:hover,
 .pure-menu li a:focus {
     background: #eee;
 }
+*/
 
 /* DISABLED STATES */
 .pure-menu li.pure-menu-disabled a:hover,
