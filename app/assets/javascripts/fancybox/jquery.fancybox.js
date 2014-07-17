@@ -979,7 +979,6 @@
 				success: function (data, textStatus) {
 					if (textStatus === 'success') {
 						coming.content = data;
-
 						F._afterLoad();
 					}
 				}
@@ -1155,13 +1154,10 @@
 
 			if (!F.isOpened) {
 				$('.fancybox-wrap').not( current.wrap ).stop(true).trigger('onReset').remove();
-
 			} else if (previous.prevMethod) {
 				F.transitions[ previous.prevMethod ]();
 			}
-
 			F.transitions[ F.isOpened ? current.nextMethod : current.openMethod ]();
-
 			F._preloadImages();
 		},
 

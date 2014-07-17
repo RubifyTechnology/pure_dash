@@ -15,7 +15,7 @@ module PureDash
       
       button_tags = []
       opts[:rhs_buttons].each do |button|
-        button_tags << content_tag(:li, link_to(button[:label], button[:url], class: ["rhs-button", button[:class]].compact.join(" "), method: button[:method]))
+        button_tags << content_tag(:li, (button[:content] ? button[:content] : link_to(button[:label], button[:url], class: ["rhs-button", button[:class]].compact.join(" "), method: button[:method], data: {no_turbolink: true})))
       end
       
       rhs_buttons_content = content_tag(:ul, button_tags.join.html_safe, class: "rhs-buttons")

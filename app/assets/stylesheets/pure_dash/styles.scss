@@ -45,7 +45,7 @@ $max_width: 1024px;
     float: left;
     color: #97a7b7;
     font-size: 12px;
-    padding-top: 5px;
+    padding-top: 7px;
     margin-left: 6px;
     text-transform: lowercase;
   }
@@ -70,7 +70,7 @@ $max_width: 1024px;
     font-size: 11px;
     text-transform: uppercase;
     &:hover {
-      color: #000;
+      border-radius: 0;
     }
   }
 }
@@ -159,7 +159,7 @@ ul.pure-dash-sub-menu {
     li {
       a {
         height: 38px;
-        padding-top: 6px;
+        padding-top: 8px;
         display: block;
         &:hover {
           text-decoration: none;
@@ -187,15 +187,15 @@ ul.pure-dash-sub-menu {
   }
 }
 
-@media only screen and (min-width : $max_width + 1) and (max-width : $max_width + 82) {
+@media only screen and (min-width : $max_width + 1) and (max-width : $max_width + 120) {
   #nprogress .spinner {
-    right: 11.5%;
+    display: none;
   }
 }
 
 @media only screen and (max-width : $max_width) {
   #nprogress .spinner {
-    right: 90px;
+    right: 180px;
   }
   
   .home-menu.pure-menu-open {
@@ -205,6 +205,7 @@ ul.pure-dash-sub-menu {
     }
     ul.rhs-buttons {
       padding-right: 10px;
+      padding-left: 0;
     }
   }
   
@@ -627,7 +628,7 @@ div.process_bar {
 .upload_file_area {
   margin-bottom: 10px;
   position: relative;
-  width: 120px;
+  width: 100%;
   &.drop:after {
     border: 3px dashed #a2acb7;
     position: absolute;
@@ -790,3 +791,4 @@ div.process_bar {
 .picker__table td, .picker__table th {
   text-align: center;
 }
+ 
