@@ -627,7 +627,7 @@ div.process_bar {
 .upload_file_area {
   margin-bottom: 10px;
   position: relative;
-  width: 120px;
+  width: 100%;
   &.drop:after {
     border: 3px dashed #a2acb7;
     position: absolute;
