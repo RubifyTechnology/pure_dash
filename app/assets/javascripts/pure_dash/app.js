@@ -13,3 +13,11 @@
 //= require ../pickadate/picker.js
 //= require ../pickadate/picker.date.js
 //= require ../pickadate/legacy.js
+//= require_self
+
+$(document).delegate("div.open-menu-link", "click", function() {    
+  $("ul.pure-dash-main-menu li.active div.sub-menu").remove();
+  $(".pure-dash-sub-menu-container").clone().addClass("sub-menu").appendTo($("ul.pure-dash-main-menu li.active"));
+  $(document.body).toggleClass("menu-active");
+  return false;
+});
