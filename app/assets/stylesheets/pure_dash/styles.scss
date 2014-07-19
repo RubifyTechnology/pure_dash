@@ -246,6 +246,17 @@ a.create-new-button {
   color: #fff;
 }
 
+.button-grey {
+  background: #a2acb7;
+  color: #fff;
+}
+
+.button-dark-blue {
+  background: #10406e;
+  color: #fff;
+}
+
+
 .button-yellow {
   background: #f4b335;
   color: #fff;
@@ -792,3 +803,9 @@ div.process_bar {
   text-align: center;
 }
  
+
+form.pure-form span.inline-errors {
+  margin-left: 21%;
+  display: block;
+  margin-top: 7px;
+}
