@@ -146,8 +146,9 @@ div.open-menu-link {
     }
   }
   li.active {
-    background-color: #bab1a8;
-    a {
+    background: none;
+    > a {
+      background-color: #bab1a8;      
       color: #000;
       font-weight: bold;      
     }
@@ -250,6 +251,10 @@ ul.pure-dash-sub-menu {
   
   div.pure-dash-menu-container {
     transition: all 0.2s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling : touch;
+    top: 0;
+    bottom: 0;
   }
   
   div.open-menu-link {
@@ -283,6 +288,8 @@ ul.pure-dash-sub-menu {
   
   div.pure-dash-menu-container {
     .pure-menu.pure-menu-horizontal ul.pure-dash-main-menu {
+      height: 100%;
+      z-index: 1;
       li {
         display: block;
         a {
@@ -290,9 +297,12 @@ ul.pure-dash-sub-menu {
         }
         div.pure-dash-sub-menu-container {
           display: block;
+          background: none;
           ul {
+            
+            z-index: 1;
             padding-left: 0px;
-            background: #333231;
+            background: none;
             li {
               a {
                 font-weight: normal;
@@ -304,12 +314,6 @@ ul.pure-dash-sub-menu {
               }
               &.active a {
                 color: #000;
-              }
-              &:hover {
-                background: #f3f3f3;
-                 a {
-                   color: #000;
-                 }
               }
             }
           }
@@ -355,6 +359,7 @@ ul.pure-dash-sub-menu {
     height: 100%;
     display: block;
     bottom: 0;
+    z-index: 1000;
   }
   
   .pure-menu.pure-menu-horizontal ul.pure-dash-main-menu {
