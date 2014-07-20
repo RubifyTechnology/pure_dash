@@ -34,7 +34,7 @@ div.open-menu-link {
   color: #fff;
   padding: 12px;
   text-decoration: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   font-weight: normal;
   left: 0;
@@ -258,16 +258,23 @@ ul.pure-dash-sub-menu {
   
   div.pure-dash-banner {
     left: 0;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
   }
   
   div.pure-dash-main-wrapper {
     left: 0;
     padding: 10px;
+    position: relative;
+    top: 40px;
   }
   
   div.pure-dash-page-header {
     left: 0;
     padding: 10px;
+    position: relative;
+    top: 50px;
   }
   
   .pure-dash-main-menu-container {
@@ -324,12 +331,12 @@ ul.pure-dash-sub-menu {
     }
     div.pure-dash-banner {
       left: 183px;
-      position: relative;
     }
   
     div.pure-dash-main-wrapper {
       left: 183px;
       position: relative;
+      
     }
   
     div.pure-dash-page-header {
