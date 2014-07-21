@@ -3,6 +3,8 @@
 //= require ./responsive-tables
 //= require ./strength
 //= require ./chart
+//= require ./jquery-ui
+//= require ./jquery.simplePagination
 
 //= require ../fancybox/jquery.mousewheel-3.0.6.pack.js
 //= require ../fancybox/jquery.fancybox.js

@@ -51,7 +51,7 @@ module PureDash
     protected
     
     def contents_show(opts={})
-      content_tag(:div, @contents.join().html_safe, class: "chart", style: "width: #{opts[:max_width]}px")
+      content_tag(:div, @contents.join().html_safe, class: "chart", style: "width: #{opts[:max_width]}")
     end
     
     def init(data, opts={})
