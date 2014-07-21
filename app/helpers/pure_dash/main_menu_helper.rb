@@ -11,11 +11,11 @@ module PureDash
             end  
           end
         end
-        menus_content << content_tag(:li, content_tag(:a, menu[:label], href: menu[:url]), class: menu[:active] ? 'active' : '')
+        menus_content << content_tag(:li, menu[:content] ? menu[:content] : content_tag(:a, menu[:label], href: menu[:url]), class: menu[:active] ? 'active' : '')
         
       end
       
-      content_tag(:div, content_tag(:ul, menus_content.join.html_safe, class: "pure-dash-main-menu"), class: "pure-dash-main-menu-container pure-menu pure-menu-open pure-menu-horizontal") + (sub_menu_contents.length > 0 ? content_tag(:div, content_tag(:ul, sub_menu_contents.join.html_safe), class: "pure-menu pure-menu-open pure-menu-horizontal pure-dash-sub-menu-container") : "")
+      content_tag(:div, content_tag(:div, content_tag(:ul, menus_content.join.html_safe, class: "pure-dash-main-menu"), class: "pure-dash-main-menu-container pure-menu pure-menu-open pure-menu-horizontal") + (sub_menu_contents.length > 0 ? content_tag(:div, content_tag(:ul, sub_menu_contents.join.html_safe), class: "pure-menu pure-menu-open pure-menu-horizontal pure-dash-sub-menu-container") : ""), class: "pure-dash-menu-container") + content_tag(:div, content_tag(:span, ""), class: "open-menu-link glyphicon glyphicon-align-justify")
     end
   end
 end

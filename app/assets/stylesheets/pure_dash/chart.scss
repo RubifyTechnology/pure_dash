@@ -1,5 +1,5 @@
 .chart {
-  float:left;
+  margin: 0 auto;
   .chart-title {
     float:left;
     width:100%;
@@ -36,6 +36,7 @@
         line-height:19px;
         margin-left: 14px;
         font-size:12px;
+        width: 210px;
       }
     }
   }
