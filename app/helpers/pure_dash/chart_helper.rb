@@ -7,8 +7,11 @@ module PureDash
       canvas = new_canvas(opts)
       add_notes_for_pie(data) if opts[:show_note]
       @contents.push(javascript_tag("
-        var ctx = document.getElementById('#{canvas[:id]}').getContext('2d');
-        new Chart(ctx).Pie(#{data.to_json});"))
+        setTimeout(function(){
+          var ctx = $('##{canvas[:id]}');
+          new Chart(ctx[0].getContext('2d')).Pie(#{data.to_json});
+        }, 2000);"))
+          
       contents_show(opts)
     end
     
@@ -19,8 +22,10 @@ module PureDash
       canvas = new_canvas(opts)
       add_notes_for_pie(data) if opts[:show_note]
       @contents.push(javascript_tag("
-        var ctx = document.getElementById('#{canvas[:id]}').getContext('2d');
-        new Chart(ctx).Doughnut(#{data.to_json});"))
+        setTimeout(function(){
+          var ctx = $('##{canvas[:id]}');
+          new Chart(ctx[0].getContext('2d')).Doughnut(#{data.to_json});
+        }, 2000);"))
       contents_show(opts)
     end
     
@@ -31,8 +36,8 @@ module PureDash
       canvas = new_canvas(opts)
       add_notes_for_line(data) if opts[:show_note]
       @contents.push(javascript_tag("
-        var ctx = document.getElementById('#{canvas[:id]}').getContext('2d');
-        new Chart(ctx).Line(#{data.to_json});"))
+        var ctx = document.getElementById('#{canvas[:id]}');
+        new Chart(ctx.getContext('2d')).Line(#{data.to_json});"))
       contents_show(opts)
     end
     
@@ -43,8 +48,8 @@ module PureDash
       canvas = new_canvas(opts)
       add_notes_for_line(data) if opts[:show_note]
       @contents.push(javascript_tag("
-        var ctx = document.getElementById('#{canvas[:id]}').getContext('2d');
-        new Chart(ctx).Bar(#{data.to_json});"))
+        var ctx = document.getElementById('#{canvas[:id]}');
+        new Chart(ctx.getContext('2d')).Bar(#{data.to_json});"))
       contents_show(opts)
     end
     

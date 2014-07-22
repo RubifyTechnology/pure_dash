@@ -7,6 +7,8 @@
 //= require ./jquery.simplePagination
 //= require ./dotdotdot
 //= require ./barchart
+//= require ./jquery.mousewheel
+//= require ./jquery.mCustomScrollbar
 
 //= require ../fancybox/jquery.mousewheel-3.0.6.pack.js
 //= require ../fancybox/jquery.fancybox.js
@@ -24,4 +26,8 @@ $(document).delegate("div.open-menu-link", "click", function() {
   $(".pure-dash-sub-menu-container").clone().addClass("sub-menu").appendTo($("ul.pure-dash-main-menu li.active"));
   $(document.body).toggleClass("menu-active");
   return false;
+});
+
+$(document).on("page:receive", function() {
+   console.log(1)
 });

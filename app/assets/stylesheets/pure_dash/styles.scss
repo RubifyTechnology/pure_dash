@@ -9,6 +9,7 @@
 //= require '../pickadate/default.date'
 //= require './on_off_switch'
 //= require './nprogress'
+//= require './jquery.mCustomScrollbar'
 
 $max_width: 1024px;
 
@@ -986,4 +987,16 @@ form.pure-form span.inline-errors {
 
 div.table-wrapper div.scrollable, div.table-wrapper div.pinned {
   -webkit-overflow-scrolling : touch;
+}
+
+.opacity-0 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+
+input[type='file'].opacity-0 {
+  font-size: 100px;
 }

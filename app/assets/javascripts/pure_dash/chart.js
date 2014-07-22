@@ -1189,7 +1189,9 @@
 		draw : function(){
 
 			var ctx = this.chart.ctx;
-
+      if (typeof(ctx.measureText) == "undefined" ) {
+        return false;
+      }
 			ctx.font = fontString(this.fontSize,this.fontStyle,this.fontFamily);
 
 			this.xAlign = "center";
