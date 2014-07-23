@@ -27,7 +27,3 @@ $(document).delegate("div.open-menu-link", "click", function() {
   $(document.body).toggleClass("menu-active");
   return false;
 });
-
-$(document).on("page:receive", function() {
-   console.log(1)
-});
