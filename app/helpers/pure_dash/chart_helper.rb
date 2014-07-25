@@ -10,7 +10,7 @@ module PureDash
         setTimeout(function(){
           var ctx = $('##{canvas[:id]}');
           new Chart(ctx[0].getContext('2d')).Pie(#{data.to_json});
-        }, 2000);"))
+        }, #{opts[:delay] || 2000});"))
           
       contents_show(opts)
     end
@@ -25,7 +25,7 @@ module PureDash
         setTimeout(function(){
           var ctx = $('##{canvas[:id]}');
           new Chart(ctx[0].getContext('2d')).Doughnut(#{data.to_json});
-        }, 2000);"))
+        }, #{opts[:delay] || 2000});"))
       contents_show(opts)
     end
     
