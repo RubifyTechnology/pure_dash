@@ -10,6 +10,7 @@
 //= require ./jquery.mousewheel
 //= require ./jquery.mCustomScrollbar
 //= require ./jquery.bpopup
+//= require ./show.errors
 
 //= require ../fancybox/jquery.mousewheel-3.0.6.pack.js
 //= require ../fancybox/jquery.fancybox.js
