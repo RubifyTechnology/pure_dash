@@ -1,4 +1,4 @@
-if(navigator.appVersion.indexOf("MSIE 8.")!=-1) {
+if(navigator.appVersion.indexOf("MSIE 8.") + navigator.appVersion.indexOf("MSIE 9.") > 0) {
   $(document).ready(function(event) {
     $('[placeholder]').each(function(index, input) {
       var input = $(input);
