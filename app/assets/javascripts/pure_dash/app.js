@@ -11,6 +11,7 @@
 //= require ./jquery.mCustomScrollbar
 //= require ./jquery.bpopup
 //= require ./show.errors
+//= require ./placeholder
 
 //= require ../fancybox/jquery.mousewheel-3.0.6.pack.js
 //= require ../fancybox/jquery.fancybox.js

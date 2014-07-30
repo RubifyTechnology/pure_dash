@@ -980,3 +980,10 @@ input[type='file'].opacity-0 {
   text-align:right;
   color:#ae3a45;
 }
+
+[placeholder] + hint {
+  position:absolute;
+  margin-top: 3px;
+  margin-left: 3px;
+  color:#999;
+}
