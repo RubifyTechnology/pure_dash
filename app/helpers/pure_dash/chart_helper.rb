@@ -7,11 +7,12 @@ module PureDash
       canvas = new_canvas(opts)
       add_notes_for_pie(data) if opts[:show_note]
       @contents.push(javascript_tag("
-        setTimeout(function(){
-          var ctx = $('##{canvas[:id]}');
-          new Chart(ctx[0].getContext('2d')).Pie(#{data.to_json});
-        }, #{opts[:delay] || 2000});"))
-          
+        var ctx_#{canvas[:id]} = $('##{canvas[:id]}')[0];
+        var globalGraphSettings = {animation : Modernizr.canvas};
+        if (window.verIE < 9) {FlashCanvas.initElement(ctx_#{canvas[:id]});}
+        new Chart(ctx_#{canvas[:id]}.getContext('2d')).Pie(#{data.to_json}, globalGraphSettings);
+      "))
+        
       contents_show(opts)
     end
     

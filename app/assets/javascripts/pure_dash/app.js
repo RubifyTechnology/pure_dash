@@ -12,6 +12,9 @@
 //= require ./jquery.bpopup
 //= require ./show.errors
 //= require ./placeholder
+//= require ./modernizr
+//= require ./flashcanvas
+//= require ./canvas2png
 
 //= require ../fancybox/jquery.mousewheel-3.0.6.pack.js
 //= require ../fancybox/jquery.fancybox.js
@@ -30,3 +33,9 @@ $(document).delegate("div.open-menu-link", "click", function() {
   $(document.body).toggleClass("menu-active");
   return false;
 });
+
+$.each(navigator.appVersion.split(";"), function(index, item) {
+  if (item.split(" ")[1] == "MSIE") {
+    return window.verIE = item.split(" ")[2];
+  }
+})
