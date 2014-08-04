@@ -304,8 +304,16 @@ if (!document.createElement('canvas').getContext) {
     this.canvas = surfaceElement;
 
     var el = surfaceElement.ownerDocument.createElement('div');
-    el.style.width =  surfaceElement.clientWidth + 'px';
-    el.style.height = surfaceElement.clientHeight + 'px';
+    if(surfaceElement.clientWidth > 0) {
+        el.style.width = surfaceElement.clientWidth + 'px';
+        el.style.height = surfaceElement.clientHeight + 'px';
+    } else if(surfaceElement.style.width != "0px") {
+        el.style.width = surfaceElement.style.width;
+        el.style.height = surfaceElement.style.height;
+    } else {
+        el.style.width = "100px";
+        el.style.height = "100px";
+    }
     el.style.overflow = 'hidden';
     el.style.position = 'absolute';
     surfaceElement.appendChild(el);

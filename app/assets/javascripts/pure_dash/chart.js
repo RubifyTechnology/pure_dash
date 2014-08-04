@@ -39,7 +39,7 @@
 			animation: true,
 
 			// Number - Number of animation steps
-			animationSteps: 60,
+			animationSteps: 30,
 
 			// String - Animation easing effect
 			animationEasing: "easeOutQuart",
@@ -952,6 +952,7 @@
 			return this;
 		},
 		toBase64Image : function(){
+      console.log(this.chart.canvas.toDataURL())
 			return this.chart.canvas.toDataURL.apply(this.chart.canvas, arguments);
 		}
 	});

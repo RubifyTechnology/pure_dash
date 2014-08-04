@@ -823,7 +823,7 @@ div.process_bar {
     z-index:-1;
   }
 
-  .pure-button.button-red.button-upload {
+  .pure-button.button-upload {
     position:relative;
     padding-bottom: 12px;
     width: 120px;
@@ -974,4 +974,16 @@ div.table-wrapper div.scrollable, div.table-wrapper div.pinned {
 
 input[type='file'].opacity-0 {
   font-size: 100px;
+}
+
+.errors {
+  text-align:right;
+  color:#ae3a45;
+}
+
+[placeholder] + hint {
+  position:absolute;
+  margin-top: 3px;
+  margin-left: 3px;
+  color:#999;
 }
