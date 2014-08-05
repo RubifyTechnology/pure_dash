@@ -8,28 +8,28 @@ module PureDash
           type: "checkbox",
           name: opts[:name] || "onoffswitch",
           class: "onoffswitch-checkbox opacity-0 #{class_rand}",
-          id: "myonoffswitch",
+          id: opts[:id] || "myonoffswitch",
           checked: (opts[:state].nil? ? true : opts[:state]), value:'1'
         )
       )
-      
-      contents.push(content_tag(:label, 
+
+      contents.push(content_tag(:label,
           [
             content_tag(:span, '', class: "onoffswitch-inner"),
             content_tag(:span, '', class: "onoffswitch-switch"),
           ].join.html_safe,
-          class: "onoffswitch-label #{(opts[:state].nil? or opts[:state]) ? 'checked' : ''}", 
-          for: "myonoffswitch",
+          class: "onoffswitch-label #{(opts[:state].nil? or opts[:state]) ? 'checked' : ''}",
+          for: opts[:id] || "myonoffswitch",
           id: class_rand
         )
       )
-      
+
       contents.push(javascript_tag("
         $('.#{class_rand}').change(function(event) {
           $('##{class_rand}').removeClass('checked').addClass($('.#{class_rand}')[0].checked ? 'checked' : '');
         });
       "))
-      
+
       content_tag(:div, contents.join().html_safe, class: "onoffswitch")
     end
   end
