@@ -981,7 +981,7 @@ input[type='file'].opacity-0 {
   color:#ae3a45;
 }
 
-[placeholder] + hint {
+[placeholder] ~ hint {
   position:absolute;
   margin-top: 3px;
   margin-left: 3px;

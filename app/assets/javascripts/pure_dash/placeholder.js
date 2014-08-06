@@ -12,15 +12,15 @@ if(navigator.appVersion.indexOf("MSIE 8.") + navigator.appVersion.indexOf("MSIE 
       $hint.click(function() {
         input.focus();
       })
-    
+
       var show = function () {
         if (input.val() == "") {
           $hint.show();
         } else {
           $hint.hide();
         }
-      }    
-    
+      }
+
       input.focus(function() {
         $hint.hide();
       }).blur(function() {
