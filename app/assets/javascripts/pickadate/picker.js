@@ -776,8 +776,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
 
     // Separated for IE
-    function focusToOpen( event ) {
-
+    function focusToOpen( event ) {        
         // Stop the event from propagating to the doc.
         event.stopPropagation()
 
@@ -788,6 +787,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
         // And then finally open the picker.
         P.open()
+        $(this).parent().find("."+P.component.settings.klass.buttonClose).focus();
     }
 
 

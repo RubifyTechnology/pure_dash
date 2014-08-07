@@ -25,6 +25,7 @@
 //= require ../pickadate/picker.js
 //= require ../pickadate/picker.date.js
 //= require ../pickadate/legacy.js
+
 //= require_self
 
 $(document).delegate("div.open-menu-link", "click", function() {    
@@ -34,8 +35,11 @@ $(document).delegate("div.open-menu-link", "click", function() {
   return false;
 });
 
-$.each(navigator.appVersion.split(";"), function(index, item) {
-  if (item.split(" ")[1] == "MSIE") {
-    return window.verIE = item.split(" ")[2];
-  }
-})
+function getVerIE() {
+  $.each(navigator.appVersion.split(";"), function(index, item) {
+    if (item.split(" ")[1] == "MSIE") {
+      window.verIE = item.split(" ")[2];
+      return window.verIE;
+    }
+  })
+}
