@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["James"]
-  s.date = "2014-07-30"
+  s.date = "2014-08-12"
   s.description = "Pure Admin Dashboard"
   s.email = "james@rubify.com"
   s.extra_rdoc_files = [
@@ -53,14 +53,18 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/pickadate/picker.js",
     "app/assets/javascripts/pure_dash/app.js",
     "app/assets/javascripts/pure_dash/barchart.js",
+    "app/assets/javascripts/pure_dash/canvas2png.js",
     "app/assets/javascripts/pure_dash/chart.js",
     "app/assets/javascripts/pure_dash/dotdotdot.js",
     "app/assets/javascripts/pure_dash/excanvas.js",
+    "app/assets/javascripts/pure_dash/flashcanvas.js",
+    "app/assets/javascripts/pure_dash/flashcanvas.swf",
     "app/assets/javascripts/pure_dash/jquery-ui.js",
     "app/assets/javascripts/pure_dash/jquery.bpopup.js",
     "app/assets/javascripts/pure_dash/jquery.mCustomScrollbar.js",
     "app/assets/javascripts/pure_dash/jquery.mousewheel.js",
     "app/assets/javascripts/pure_dash/jquery.simplePagination.js",
+    "app/assets/javascripts/pure_dash/modernizr.js",
     "app/assets/javascripts/pure_dash/nprogress.js",
     "app/assets/javascripts/pure_dash/placeholder.js",
     "app/assets/javascripts/pure_dash/responsive-tables.js",
