@@ -952,7 +952,6 @@
 			return this;
 		},
 		toBase64Image : function(){
-      console.log(this.chart.canvas.toDataURL())
 			return this.chart.canvas.toDataURL.apply(this.chart.canvas, arguments);
 		}
 	});
@@ -1204,7 +1203,11 @@
 			var tooltipWidth = ctx.measureText(this.text).width + 2*this.xPadding,
 				tooltipRectHeight = this.fontSize + 2*this.yPadding,
 				tooltipHeight = tooltipRectHeight + this.caretHeight + caretPadding;
-
+      if (tooltipWidth > 285) {
+        tooltipRectHeight = tooltipRectHeight *  Math.ceil(tooltipWidth / 285)
+        tooltipHeight = tooltipRectHeight + this.caretHeight + caretPadding;
+        tooltipWidth = 285
+      }
 			if (this.x + tooltipWidth/2 >this.chart.width){
 				this.xAlign = "left";
 			} else if (this.x - tooltipWidth/2 < 0){
@@ -1254,14 +1257,18 @@
 				break;
 			}
 
-			drawRoundedRectangle(ctx,tooltipX,tooltipY,tooltipWidth,tooltipRectHeight,this.cornerRadius);
+			drawRoundedRectangle(ctx,tooltipX,tooltipY,tooltipWidth,tooltipRectHeight,this.fontSize);
 
 			ctx.fill();
 
 			ctx.fillStyle = this.textColor;
 			ctx.textAlign = "center";
-			ctx.textBaseline = "middle";
-			ctx.fillText(this.text, tooltipX + tooltipWidth/2, tooltipY + tooltipRectHeight/2);
+      ctx.textBaseline = "middle";
+      if (ctx.measureText(this.text).width > 285) {
+        ctx.wrapText(this.text, tooltipX + tooltipWidth/2 + this.xPadding/2, tooltipY + tooltipRectHeight/2 - this.yPadding, tooltipWidth - this.xPadding, this.fontSize*1.3);
+      } else {
+        ctx.fillText(this.text, tooltipX + tooltipWidth/2, tooltipY + tooltipRectHeight/2);
+      }      
 		}
 	});
 
@@ -3301,3 +3308,31 @@
 	});
 
 }).call(this);
+
+CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight) {
+
+    var lines = text.split("\n");
+
+    for (var i = 0; i < lines.length; i++) {
+
+        var words = lines[i].split(' ');
+        var line = '';
+
+        for (var n = 0; n < words.length; n++) {
+            var testLine = line + words[n] + ' ';
+            var metrics = this.measureText(testLine);
+            var testWidth = metrics.width;
+            if (testWidth > maxWidth && n > 0) {
+                this.fillText(line, x, y);
+                line = words[n] + ' ';
+                y += lineHeight;
+            }
+            else {
+                line = testLine;
+            }
+        }
+
+        this.fillText(line, x, y);
+        y += lineHeight;
+    }
+}
