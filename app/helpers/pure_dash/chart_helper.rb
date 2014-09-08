@@ -38,7 +38,7 @@ module PureDash
       add_notes_for_line(data) if opts[:show_note]
       @contents.push(javascript_tag("
         var ctx = document.getElementById('#{canvas[:id]}');
-        new Chart(ctx.getContext('2d')).Line(#{data.to_json});"))
+        new Chart(ctx.getContext('2d')).Line(#{data.to_json}, #{opts[:options].to_json});"))
       contents_show(opts)
     end
     
@@ -94,7 +94,7 @@ module PureDash
         height: "300",
         id: "pie_#{Random.new_seed.to_s[0..5]}"
       }.merge(opts)
-      tg = content_tag(:div, content_tag(:canvas, "", id: "#{opts[:id]}", width: "#{opts[:width]}", height: "#{opts[:height]}").html_safe, class: "chart-viewer", style: "width: #{opts[:width]}px")
+      tg = content_tag(:div, content_tag(:canvas, "", id: "#{opts[:id]}", width: "#{opts[:width]}", height: "#{opts[:height]}", style: " #{opts[:style]}").html_safe, class: "chart-viewer", style: "width: #{opts[:width]}")
       @contents.push(tg)
       return {tag: tg, id: opts[:id]}
     end
