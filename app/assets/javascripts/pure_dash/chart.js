@@ -1254,10 +1254,10 @@
 			switch(this.xAlign)
 			{
 			case "left":
-				tooltipX = this.x - tooltipWidth + (this.cornerRadius + this.caretHeight);
+				tooltipX = this.x - tooltipWidth + (this.cornerRadius + this.caretHeight) + 25;
 				break;
 			case "right":
-				tooltipX = this.x - (this.cornerRadius + this.caretHeight);
+				tooltipX = this.x - (this.cornerRadius + this.caretHeight) - 25;
 				break;
 			}
 
