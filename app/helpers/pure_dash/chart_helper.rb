@@ -54,6 +54,10 @@ module PureDash
       contents_show(opts)
     end
     
+    def pure_dash_chart_table(data, opts={})
+      init_table(data, opts)
+    end
+    
     protected
     
     def contents_show(opts={})
@@ -107,6 +111,33 @@ module PureDash
           data[index] = defaults[index].merge(item)
         end
       end
+    end
+    
+    
+    # Chart for table
+    def init_table(data, opts={})
+      header_indexs = []
+            
+      thead_ths = []
+      opts[:header].each_with_index do |header, index|
+        thead_ths.push(content_tag(:th, header[1], class: opts[:class][index]))
+        header_indexs.push(header[0])
+      end
+      thead_tr = content_tag(:tr, thead_ths.join().html_safe)
+      thead = content_tag(:thead, thead_tr)
+      
+      index_column = Hash[header_indexs.map.with_index.to_a]
+            
+      trs = []
+      data.each do |row|
+        tds = []
+        row.each do |attrs|
+          tds[index_column[attrs[0]]] = content_tag(:td, attrs[1], class: opts[:class][index_column[attrs[0]]])
+        end
+        trs.push(content_tag(:tr, tds.join().html_safe))
+      end
+      tbody = content_tag(:tbody, trs.join().html_safe, style: opts[:tbody_style])
+      content_tag(:table, [thead, tbody].join().html_safe, class: "table")
     end
     
   end

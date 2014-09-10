@@ -105,6 +105,9 @@
 
 			// Number - Tooltip label font size in pixels
 			tooltipFontSize: 14,
+      
+      // Max width for tooltip
+      tooltipMaxWidth: 260,
 
 			// String - Tooltip font weight style
 			tooltipFontStyle: "normal",
@@ -913,6 +916,7 @@
 						fillColor: this.options.tooltipFillColor,
 						textColor: this.options.tooltipFontColor,
 						fontFamily: this.options.tooltipFontFamily,
+            maxWidth: this.options.tooltipMaxWidth,
 						fontStyle: this.options.tooltipFontStyle,
 						fontSize: this.options.tooltipFontSize,
 						titleTextColor: this.options.tooltipTitleFontColor,
@@ -939,6 +943,7 @@
 							fillColor: this.options.tooltipFillColor,
 							textColor: this.options.tooltipFontColor,
 							fontFamily: this.options.tooltipFontFamily,
+              maxWidth: this.options.tooltipMaxWidth,
 							fontStyle: this.options.tooltipFontStyle,
 							fontSize: this.options.tooltipFontSize,
 							caretHeight: this.options.tooltipCaretSize,
@@ -1187,7 +1192,6 @@
 
 	Chart.Tooltip = Chart.Element.extend({
 		draw : function(){
-
 			var ctx = this.chart.ctx;
       if (typeof(ctx.measureText) == "undefined" ) {
         return false;
@@ -1203,10 +1207,10 @@
 			var tooltipWidth = ctx.measureText(this.text).width + 2*this.xPadding,
 				tooltipRectHeight = this.fontSize + 2*this.yPadding,
 				tooltipHeight = tooltipRectHeight + this.caretHeight + caretPadding;
-      if (tooltipWidth > 285) {
-        tooltipRectHeight = tooltipRectHeight *  Math.ceil(tooltipWidth / 285)
+      if (tooltipWidth > this.maxWidth) {
+        tooltipRectHeight = tooltipRectHeight *  Math.ceil(tooltipWidth / this.maxWidth)
         tooltipHeight = tooltipRectHeight + this.caretHeight + caretPadding;
-        tooltipWidth = 285
+        tooltipWidth = this.maxWidth
       }
 			if (this.x + tooltipWidth/2 >this.chart.width){
 				this.xAlign = "left";
@@ -1264,7 +1268,7 @@
 			ctx.fillStyle = this.textColor;
 			ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      if (ctx.measureText(this.text).width > 285) {
+      if (ctx.measureText(this.text).width > this.maxWidth) {
         ctx.wrapText(this.text, tooltipX + tooltipWidth/2 + this.xPadding/2, tooltipY + tooltipRectHeight/2 - this.yPadding, tooltipWidth - this.xPadding, this.fontSize*1.3);
       } else {
         ctx.fillText(this.text, tooltipX + tooltipWidth/2, tooltipY + tooltipRectHeight/2);
