@@ -20,7 +20,7 @@ $.fn.dotdotdot = function (options) {
     }
   }
   
-  var _addEventMore = function ($item, full, mini, _opts) {
+  var _addEventMore = function ($item, full, mini, _opts) {    
     setHtml($item, mini + _opts.dot)
     var a = $("<a/>").attr("href", "#").html(_opts.textMore).css("padding-left", "5px");
     $item.append(a);
@@ -40,8 +40,8 @@ $.fn.dotdotdot = function (options) {
     a.click(function(event) {
       event.preventDefault();
       var length = $item.attr("length") || _opts.length;
-      var mini = $item.text().substr(0, length);
-      if (full.length > length) {
+      var mini = $item.text().substr(0, parseInt(length));
+      if (full.length > parseInt(length)) {
         setHtml($item, mini + _opts.dot)
         var a = $("<a/>").attr("href", "#").html(_opts.textMore).css("padding-left", "5px");
         $item.append(a);
@@ -56,7 +56,7 @@ $.fn.dotdotdot = function (options) {
       var length = $item.attr("length") || opts.length;
       var mini = $item.text().substr(0, length);
       var full = $item.text();
-      if (full.length > length) {
+      if (full.trim().length > parseInt(length) + opts.dot.length + opts.textMore.length) {
         setHtml($item, mini + opts.dot)
         var a = $("<a/>").attr("href", "#").html(opts.textMore).css("padding-left", "5px");
         $item.append(a);
