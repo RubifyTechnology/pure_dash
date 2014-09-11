@@ -1203,6 +1203,7 @@
 
 			//Distance between the actual element.y position and the start of the tooltip caret
 			var caretPadding = 2;
+      var marginArrow =  5;
 
 			var tooltipWidth = ctx.measureText(this.text).width + 2*this.xPadding,
 				tooltipRectHeight = this.fontSize + 2*this.yPadding,
@@ -1211,12 +1212,18 @@
         tooltipRectHeight = tooltipRectHeight *  Math.ceil(tooltipWidth / this.maxWidth)
         tooltipHeight = tooltipRectHeight + this.caretHeight + caretPadding;
         tooltipWidth = this.maxWidth
+      }      
+      if (this.x + tooltipWidth/2 >this.chart.width){
+        this.xAlign = "left";
+      } else if (this.x - tooltipWidth/2 < 0){
+        this.xAlign = "right";
       }
-			if (this.x + tooltipWidth/2 >this.chart.width){
-				this.xAlign = "left";
-			} else if (this.x - tooltipWidth/2 < 0){
-				this.xAlign = "right";
-			}
+      
+      // if (tooltipWidth/2 + this.xPadding > this.x){
+//         this.xAlign = "left";
+//       } else if (this.chart.width - this.x < tooltipWidth/2 + this.xPadding){
+//         this.xAlign = "right";
+//       }
 
 			if (this.y - tooltipHeight < 0){
 				this.yAlign = "below";
@@ -1254,10 +1261,10 @@
 			switch(this.xAlign)
 			{
 			case "left":
-				tooltipX = this.x - tooltipWidth + (this.cornerRadius + this.caretHeight) + 25;
+				tooltipX = this.x - tooltipWidth + (this.cornerRadius + this.caretHeight) + marginArrow;
 				break;
 			case "right":
-				tooltipX = this.x - (this.cornerRadius + this.caretHeight) - 25;
+				tooltipX = this.x - (this.cornerRadius + this.caretHeight) - marginArrow;
 				break;
 			}
 
