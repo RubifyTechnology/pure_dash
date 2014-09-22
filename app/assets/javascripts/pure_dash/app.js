@@ -6,6 +6,7 @@
 //= require ./jquery-ui
 //= require ./jquery.simplePagination
 //= require ./dotdotdot
+//= require ./popup.pure_dash
 //= require ./barchart
 //= require ./jquery.mousewheel
 //= require ./jquery.mCustomScrollbar
