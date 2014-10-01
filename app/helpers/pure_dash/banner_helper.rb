@@ -19,8 +19,29 @@ module PureDash
       end
       
       rhs_buttons_content = content_tag(:ul, button_tags.join.html_safe, class: "rhs-buttons")
-      content_tag(:div, content_tag(:div, [company_logo_content, rhs_buttons_content].join.html_safe, class: "home-menu pure-menu pure-menu-open pure-menu-horizontal"), class: "pure-dash-banner")      
+      content_tag(:div, content_tag(:div, [company_logo_content, rhs_buttons_content].join.html_safe, class: "home-menu pure-menu pure-menu-open pure-menu-horizontal"), class: "pure-dash-banner")
     end
+    
+    def pure_dash_header(opts={})
+      opts = {
+        rhs_buttons: [{
+          label: "Logout",
+          url: "/users/sign_out",
+          method: "delete"
+        }]        
+      }.merge(opts)
+      
+      list = []
+      opts[:rhs_buttons].each do |button|
+        list << content_tag(:li, (button[:content] ? button[:content] : link_to(button[:label], button[:url], class: ["rhs-button", button[:class]].compact.join(" ").html_safe, method: button[:method], data: {no_turbolink: true})), class: button[:class] ? button[:class] : "", style: button[:style] ? button[:style] : "")
+      end
+      
+      logo = content_tag(:div, content_tag(:a, [content_tag(:div, '', class: 'logo'), content_tag(:div, '', class: 'motto')].join().html_safe, href: "/"), class: 'unit-1-2')
+      navi = content_tag(:div, content_tag(:div, content_tag(:ul, list.join().html_safe, class: 'display'), class: "nav"), class: 'unit-1-2')
+            
+      content_tag(:section, content_tag(:div, content_tag(:div, content_tag(:div, [logo, navi].join().html_safe, class: 'grid'), class: 'content'), class: 'wrapper').html_safe, class: "header")
+    end
+
     
     def pure_dash_main_menu(menus)
       menus_content = []
